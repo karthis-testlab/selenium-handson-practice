@@ -15,15 +15,15 @@ import com.opencsv.bean.StatefulBeanToCsvBuilder;
 import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
-public class ReadUrlFromSiteMap {
+public class ReadUrlFromSiteMapXmlSite {
 
 	public static void main(String[] args) {
-
+		
 		Document document;
-
+		
 		try {
-			document = Jsoup.connect("https://www.java67.com/sitemap.xml").get();
-			Elements urls = document.select("sitemap loc");
+			document = Jsoup.connect("https://www.digitalfactory24.com/sitemap.xml").get();
+			Elements urls = document.select("url loc");
 			List<String> listOfUrls = urls.stream().map(element -> element.text()).collect(Collectors.toList());
 			List<BaseUrlRepo> insert = new ArrayList<BaseUrlRepo>();
 			for (String url : listOfUrls) {
@@ -37,6 +37,7 @@ public class ReadUrlFromSiteMap {
 		} catch (IOException | CsvDataTypeMismatchException | CsvRequiredFieldEmptyException e) {
 			e.printStackTrace();
 		}
+		
 
 	}
 
