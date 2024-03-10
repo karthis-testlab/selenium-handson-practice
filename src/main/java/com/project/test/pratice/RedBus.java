@@ -26,7 +26,7 @@ public class RedBus {
 		driver.get("https://www.redbus.in/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-		driver.findElement(By.id("onwardCal")).click();	
+		driver.findElement(By.cssSelector("div#onwardCal")).click();	
 
 		System.out.println(getWeekEndsOfMonth("Mar 2024"));
 		
@@ -36,15 +36,15 @@ public class RedBus {
 
 	public static List<String> getWeekEndsOfMonth(String monthAndYear) {
 		
-		while (!driver.findElement(By.xpath("//div[contains(@class,'CalendarHeader')]/div[text()]")).getText()
+		while (!driver.findElement(By.cssSelector("div[class*='CalendarHeader'] > div:nth-of-type(2)")).getText()
 				.startsWith(monthAndYear)) {
-			System.out.println(driver.findElement(By.xpath("//div[contains(@class,'CalendarHeader')]/div[text()]")).getText());
+			System.out.println(driver.findElement(By.cssSelector("div[class*='CalendarHeader'] > div:nth-of-type(2)")).getText());
 			if (driver.findElements(By.cssSelector("div.holiday_count")).size() == 0) {
 				System.out.println("0 Holidays");
 			}
 			
 			List<WebElement> monthChanger = driver
-					.findElements(By.xpath("//div[contains(@class,'CalendarHeader')]/div/*[@id]"));
+					.findElements(By.cssSelector("div[class*='CalendarHeader'] > div:nth-of-type(3) > svg"));
 			
 			if (monthChanger.size() > 1) {
 				monthChanger.get(1).click();
@@ -54,13 +54,13 @@ public class RedBus {
 			
 		}		
 		
-		System.out.println(driver.findElement(By.xpath("//div[contains(@class,'CalendarHeader')]/div[text()]")).getText());
+		System.out.println(driver.findElement(By.cssSelector("div[class*='CalendarHeader'] > div:nth-of-type(2)")).getText());
 		
 		if (driver.findElements(By.cssSelector("div.holiday_count")).size() == 0) {
 			System.out.println("0 Holidays");
 		}
 
-		List<String> weekEnds = driver.findElements(By.xpath("//span[contains(@class,'CalendarDaysSpan')]")).stream()
+		List<String> weekEnds = driver.findElements(By.cssSelector("span[class*='CalendarDaysSpan']")).stream()
 				.filter(element -> Color.fromString(element.getCssValue("color")).asHex().equals("#d84e55"))
 				.map(element -> element.getText()).collect(Collectors.toList());
 
