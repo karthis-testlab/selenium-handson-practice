@@ -1,6 +1,7 @@
 package com.selenium.general.practice;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -17,16 +18,16 @@ public class WorkWithMultipleWindows {
 		ChromeDriver driver = new ChromeDriver();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 		driver.manage().window().maximize();
-		String parentHandle = driver.getWindowHandle();
+		//String parentHandle = driver.getWindowHandle();
 		driver.get("https://the-internet.herokuapp.com/windows");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Click Here")));
 		driver.findElement(By.linkText("Click Here")).click();
 		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
-		switchNewWindowByWindowHandle(driver, parentHandle);
+		switchNewWindowByJava8Stream(driver, 1);
 		System.out.println(driver.findElement(By.cssSelector("div.example h3")).getText());
 		driver.close();
 		wait.until(ExpectedConditions.numberOfWindowsToBe(1));
-		switchToParentWindow(driver, parentHandle);
+		switchToParentWindow(driver);
 		System.out.println(driver.findElement(By.cssSelector("div.example h3")).getText());
 		driver.quit();
 		
@@ -34,6 +35,11 @@ public class WorkWithMultipleWindows {
 	
 	public static void switchToParentWindow(ChromeDriver driver, String parentWindow) {
 		driver.switchTo().window(parentWindow);
+	}
+	
+	public static void switchToParentWindow(ChromeDriver driver) {
+		List<String> windows = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(windows.get(0));
 	}
 	
 	public static void switchNewWindowByTitle(ChromeDriver driver, String title) {		
@@ -55,11 +61,14 @@ public class WorkWithMultipleWindows {
 		}
 	}
 	
-	/*
-	 * List<String> windows = driver.getWindowHandles().stream().collect(Collectors.toList());
-		System.out.println(driver.switchTo().window(windows.get(0)).getTitle());
-		System.out.println(driver.switchTo().window(windows.get(1)).getTitle());
+	public static void switchNewWindowByArrayList(ChromeDriver driver, int index) {
+		List<String> windows = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(windows.get(index));
+	}
+	
+	public static void switchNewWindowByJava8Stream(ChromeDriver driver, int index) {
+		List<String> windows = driver.getWindowHandles().stream().collect(Collectors.toList());
 		driver.switchTo().window(windows.get(1));
-	 */
+	}	
 
 }
