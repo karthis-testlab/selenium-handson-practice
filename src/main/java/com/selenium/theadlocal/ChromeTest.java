@@ -9,10 +9,14 @@ public class ChromeTest {
 
 	public static void main(String[] args) {
 		
-		threadLocal.set(new ChromeDriver());
+		setDriver(new ChromeDriver());
 		getDriver().get("https://www.google.com/");
 		getDriver().quit();
 
+	}
+	
+	public static void setDriver(RemoteWebDriver driver) {
+		threadLocal.set(driver);
 	}
 	
 	public static RemoteWebDriver getDriver() {
