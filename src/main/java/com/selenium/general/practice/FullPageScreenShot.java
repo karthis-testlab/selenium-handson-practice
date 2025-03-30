@@ -8,6 +8,7 @@ public class FullPageScreenShot {
 		
 		ChromeDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		driver.get("");
 
 	}
 
