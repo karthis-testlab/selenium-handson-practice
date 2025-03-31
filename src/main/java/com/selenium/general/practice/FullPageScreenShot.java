@@ -1,5 +1,7 @@
 package com.selenium.general.practice;
 
+import java.time.Duration;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class FullPageScreenShot {
@@ -9,6 +11,7 @@ public class FullPageScreenShot {
 		ChromeDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
 	}
 
