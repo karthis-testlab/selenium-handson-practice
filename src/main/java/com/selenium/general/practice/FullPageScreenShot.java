@@ -10,7 +10,7 @@ public class FullPageScreenShot {
 		
 		ChromeDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("");
+		driver.get("https://www.flexcarestaff.com/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
 	}
