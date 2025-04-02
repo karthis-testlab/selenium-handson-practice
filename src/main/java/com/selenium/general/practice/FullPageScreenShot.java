@@ -3,6 +3,7 @@ package com.selenium.general.practice;
 import java.time.Duration;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.DevTools;
 
 public class FullPageScreenShot {
 
@@ -12,6 +13,7 @@ public class FullPageScreenShot {
 		driver.manage().window().maximize();
 		driver.get("https://www.flexcarestaff.com/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		DevTools devTools = driver.getDevTools();
 
 	}
 
