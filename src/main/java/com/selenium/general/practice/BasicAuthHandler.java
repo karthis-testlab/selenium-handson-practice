@@ -11,6 +11,7 @@ public class BasicAuthHandler {
 		driver.manage().window().maximize();
 		driver.get("");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		
 	}
 
 }
