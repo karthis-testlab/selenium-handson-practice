@@ -9,8 +9,8 @@ public class BasicAuthHandler {
 	
 	public static void main(String[] args) {
 		ChromeOptions options = new ChromeOptions();
-		ChromeDriver driver = new ChromeDriver();
-		
+		options.addArguments("");
+		ChromeDriver driver = new ChromeDriver();		
 		driver.get("https://www.browserstack.com/guide/selenium-scroll-tutorial");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		
