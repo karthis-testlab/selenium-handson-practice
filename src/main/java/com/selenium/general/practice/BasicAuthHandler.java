@@ -10,7 +10,7 @@ public class BasicAuthHandler {
 	public static void main(String[] args) {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--start-maximized");
-		ChromeDriver driver = new ChromeDriver();		
+		ChromeDriver driver = new ChromeDriver(options);	
 		driver.get("https://www.browserstack.com/guide/selenium-scroll-tutorial");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		
