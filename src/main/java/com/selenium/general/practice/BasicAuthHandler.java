@@ -11,7 +11,7 @@ public class BasicAuthHandler {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--start-maximized");
 		ChromeDriver driver = new ChromeDriver(options);	
-		driver.get("https://www.browserstack.com/guide/selenium-scroll-tutorial");
+		driver.get("https://the-internet.herokuapp.com/basic_auth");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		
 	}
