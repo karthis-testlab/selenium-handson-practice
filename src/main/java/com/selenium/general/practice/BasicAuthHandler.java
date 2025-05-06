@@ -12,7 +12,8 @@ public class BasicAuthHandler {
 		options.addArguments("--start-maximized");
 		ChromeDriver driver = new ChromeDriver(options);	
 		driver.get("https://the-internet.herokuapp.com/basic_auth");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.
 	}
 
 }
