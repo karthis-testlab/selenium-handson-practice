@@ -2,6 +2,7 @@ package com.selenium.general.practice;
 
 import java.time.Duration;
 
+import org.openqa.selenium.UsernameAndPassword;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -13,7 +14,7 @@ public class BasicAuthHandler {
 		ChromeDriver driver = new ChromeDriver(options);	
 		driver.get("https://the-internet.herokuapp.com/basic_auth");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.
+		driver.register(UsernameAndPassword.of("", ""));
 	}
 
 }
