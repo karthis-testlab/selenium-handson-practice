@@ -14,7 +14,7 @@ public class BasicAuthHandler {
 		ChromeDriver driver = new ChromeDriver(options);	
 		driver.get("https://the-internet.herokuapp.com/basic_auth");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.register(UsernameAndPassword.of("", ""));
+		driver.register(UsernameAndPassword.of("admin", "admin"));
 	}
 
 }
