@@ -15,7 +15,7 @@ public class BasicAuthHandler {
 		driver.register(UsernameAndPassword.of("admin", "admin"));
 		driver.get("https://the-internet.herokuapp.com/basic_auth");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		System.out.println(driver.findElement(null));
+		System.out.println(driver.findElement(""));
 	}
 
 }
