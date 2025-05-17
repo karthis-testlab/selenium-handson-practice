@@ -21,5 +21,7 @@ public class BasicAuthHandler {
 		System.out.println(driver.findElement(By.tagName("h3")).getText());
 		driver.quit();
 	}
+	
+	
 
 }
