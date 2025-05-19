@@ -22,6 +22,8 @@ public class BasicAuthHandler {
 		driver.quit();
 	}
 	
-	
+	public String basic_auth(String username, String password, String url) {
+		
+	}
 
 }
