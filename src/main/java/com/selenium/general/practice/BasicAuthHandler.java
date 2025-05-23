@@ -23,7 +23,7 @@ public class BasicAuthHandler {
 	}
 	
 	public String basic_auth(String username, String password, String hostName) {
-		return "https://";
+		return "https://"+username+":"+password+"@"+hostName+"/";
 	}
 
 }
