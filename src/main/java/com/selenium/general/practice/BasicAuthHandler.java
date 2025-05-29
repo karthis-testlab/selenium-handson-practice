@@ -27,7 +27,6 @@ public class BasicAuthHandler {
 	}
 	
 	public void basic_auth(String username, String password) {
-		return "https://"+username+":"+password+"@"+hostName+"/";
 	}
 
 }
