@@ -27,7 +27,7 @@ public class BasicAuthHandler {
 	}
 	
 	public void basic_auth(String username, String password) {
-		driver.register(UsernameAndPassword.of("admin", "admin"));
+		driver.register(UsernameAndPassword.of(username, password));
 	}
 
 }
