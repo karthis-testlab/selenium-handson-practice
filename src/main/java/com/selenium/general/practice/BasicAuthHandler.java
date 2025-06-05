@@ -26,7 +26,7 @@ public class BasicAuthHandler {
 		return "https://"+username+":"+password+"@"+hostName+"/";
 	}
 	
-	public void basic_auth(String username, String password) {
+	public static void basic_auth(String username, String password) {
 		driver.register(UsernameAndPassword.of(username, password));
 	}
 
