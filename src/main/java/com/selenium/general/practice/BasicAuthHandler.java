@@ -12,7 +12,7 @@ public class BasicAuthHandler {
 	static ChromeDriver driver;
 	
 	public static void main(String[] args) {
-		ChromeOptions options = new ChromeOptions();
+		
 		options.addArguments("--start-maximized");
 	    driver = new ChromeDriver(options);
 	    driver.get("https://the-internet.herokuapp.com/basic_auth");
