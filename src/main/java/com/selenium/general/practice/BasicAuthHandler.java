@@ -10,9 +10,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class BasicAuthHandler {
 	
 	static ChromeDriver driver;
+	static ChromeOptions options = new ChromeOptions();
 	
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {		
 		options.addArguments("--start-maximized");
 	    driver = new ChromeDriver(options);
 	    driver.get("https://the-internet.herokuapp.com/basic_auth");
