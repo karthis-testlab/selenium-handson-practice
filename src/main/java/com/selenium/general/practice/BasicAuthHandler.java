@@ -15,7 +15,7 @@ public class BasicAuthHandler {
 	public static void main(String[] args) {		
 		options.addArguments("--start-maximized");
 	    driver = new ChromeDriver(options);
-	    basic_auth("", "");
+	    basic_auth("admin", "");
 	    driver.get("https://the-internet.herokuapp.com/basic_auth");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		System.out.println(driver.findElement(By.tagName("h3")).getText());
