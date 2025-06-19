@@ -21,12 +21,12 @@ public class BasicAuthHandler {
 		System.out.println(driver.findElement(By.tagName("h3")).getText());
 		driver.quit();
 		
-		/*options.addArguments("--start-maximized");
+		options.addArguments("--start-maximized");
 	    driver = new ChromeDriver(options);
 		driver.get("https://the-internet.herokuapp.com/basic_auth");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		System.out.println(driver.findElement(By.tagName("h3")).getText());
-		driver.quit();*/
+		driver.quit();
 	}
 	
 	public static String basic_auth(String username, String password, String hostName) {
