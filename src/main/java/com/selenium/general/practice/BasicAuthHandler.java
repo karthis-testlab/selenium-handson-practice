@@ -30,7 +30,7 @@ public class BasicAuthHandler {
 	}
 	
 	public static String basic_auth(String username, String password, String hostName) {
-		return "https://"+username+":"+password+"@"+hostName+"/";
+		return "https://"+username+":"+password+"@"+hostName;
 	}
 	
 	public static void basic_auth(String username, String password) {
