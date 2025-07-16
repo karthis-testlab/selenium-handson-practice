@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class BasicAuthHandler {
 	
-	static ChromeDriver driver;
+	private static ChromeDriver driver;
 	static ChromeOptions options = new ChromeOptions();
 	
 	public static void main(String[] args) {		
