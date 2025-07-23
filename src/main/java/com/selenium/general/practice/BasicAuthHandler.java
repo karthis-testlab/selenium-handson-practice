@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class BasicAuthHandler {
 	
 	private static ChromeDriver driver;
-	static ChromeOptions options = new ChromeOptions();
+	private static ChromeOptions options = new ChromeOptions();
 	
 	public static void main(String[] args) {		
 		options.addArguments("--start-maximized");
